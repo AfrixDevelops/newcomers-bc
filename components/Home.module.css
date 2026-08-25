@@ -317,11 +317,10 @@
 .result {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   padding: 14px 16px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--c);
   border-radius: var(--radius-tile);
   box-shadow: var(--shadow);
 }
@@ -331,12 +330,29 @@
   border-color: var(--c);
 }
 
+/* The category icon carries identity here. An accent stripe would be
+   redundant with the coloured label beside it. */
 .resultMeta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--c);
+}
+
+.resultBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  color: #fff;
+  background: var(--c);
+  border-radius: 6px;
 }
 
 .resultText {

@@ -137,6 +137,11 @@ export function SearchableHome() {
                     style={m.category ? catVars(m.category) : undefined}
                   >
                     <span className={styles.resultMeta}>
+                      {m.category && (
+                        <span className={styles.resultBadge}>
+                          <CategoryIcon name={m.category.icon} size={13} />
+                        </span>
+                      )}
                       {m.category?.title} · {m.resource.type}
                     </span>
                     <span className={styles.resultText}>{m.resource.text}</span>
