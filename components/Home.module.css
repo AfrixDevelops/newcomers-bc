@@ -235,11 +235,11 @@
   border-color: var(--c);
 }
 
+/* Same surface as the standard cards. The priority tier is set apart by
+   a colour-matched border and larger type rather than a solid fill. */
 .topicCardLarge {
   padding: 22px;
-  /* Colour reads as a solid plane on the priority tier. */
-  background: var(--c);
-  border-color: var(--c);
+  border: 2px solid var(--c);
 }
 
 .badge {
@@ -253,10 +253,9 @@
   border-radius: var(--radius-control);
 }
 
-/* On the solid tier the badge inverts: card carries the colour. */
 .topicCardLarge .badge {
-  color: var(--c);
-  background: #fff;
+  width: 48px;
+  height: 48px;
 }
 
 .topicTitle {
@@ -268,19 +267,12 @@
 
 .topicCardLarge .topicTitle {
   font-size: 1.35rem;
-  color: #fff;
 }
 
 .topicBlurb {
   flex: 1;
   font-size: 0.9rem;
   color: var(--ink-soft);
-}
-
-/* 0.95 rather than 0.9: at 0.9 the lightest category colour dropped
-   below the WCAG AA 4.5:1 floor for body text. */
-.topicCardLarge .topicBlurb {
-  color: rgba(255, 255, 255, 0.95);
 }
 
 .topicGo {
@@ -290,10 +282,6 @@
   font-size: 0.86rem;
   font-weight: 700;
   color: var(--c);
-}
-
-.topicCardLarge .topicGo {
-  color: #fff;
 }
 
 /* ---------------- search results ---------------- */
