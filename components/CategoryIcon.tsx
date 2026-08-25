@@ -1,12 +1,14 @@
 import {
   AirplaneTilt,
   Briefcase,
+  Bus,
   Coins,
   Compass,
   GraduationCap,
   HeartStraight,
   House,
   Scales,
+  Stethoscope,
   Translate,
   UsersThree,
 } from '@phosphor-icons/react/dist/ssr';
@@ -26,6 +28,8 @@ const ICONS: Record<string, typeof Compass> = {
   Coins,
   AirplaneTilt,
   GraduationCap,
+  Stethoscope,
+  Bus,
 };
 
 export function CategoryIcon({

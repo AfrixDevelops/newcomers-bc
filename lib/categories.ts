@@ -9,7 +9,9 @@ export type CategorySlug =
   | "mental-health"
   | "financial"
   | "working-holiday"
-  | "education";
+  | "education"
+  | "healthcare"
+  | "transportation";
 
 export interface Category {
   slug: CategorySlug;
@@ -93,6 +95,20 @@ export const categories: Category[] = [
     "subtitle": "Registering for school, funding further study, and building Canadian credentials.",
     "blurb": "Register for school, fund your studies, and keep learning in BC.",
     "icon": "GraduationCap"
+  },
+  {
+    "slug": "healthcare",
+    "title": "Healthcare & Wellness",
+    "subtitle": "Getting into BC's health system, and knowing what it does and does not cover.",
+    "blurb": "See a doctor, fill a prescription, and understand what MSP covers.",
+    "icon": "Stethoscope"
+  },
+  {
+    "slug": "transportation",
+    "title": "Transportation & Getting Around",
+    "subtitle": "Driving, transit, and ferries: the practical logistics of moving around the province.",
+    "blurb": "Get your licence, ride transit, and travel around British Columbia.",
+    "icon": "Bus"
   }
 ];
 

@@ -1289,6 +1289,276 @@ export const resources: Resource[] = [
     "domain": "reddit.com",
     "url": "https://www.reddit.com/r/ImmigrationCanada/",
     "note": "Peer discussion, not official guidance. The Office for International Credential Recognition is the authority."
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Action",
+    "text": "Call 8-1-1 any time, free, to speak with a registered nurse. Interpretation is available in more than 130 languages.",
+    "org": "HealthLink BC",
+    "domain": "healthlinkbc.ca",
+    "url": "https://www.healthlinkbc.ca/"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Action",
+    "text": "No family doctor yet? Join the Health Connect Registry to be matched with one taking new patients in your area.",
+    "org": "HealthLink BC - Health Connect Registry",
+    "domain": "healthlinkbc.ca",
+    "url": "https://www.healthlinkbc.ca/health-connect-registry"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Tip",
+    "text": "Call 9-1-1 for emergencies. Ambulance trips are not fully covered by MSP, so expect a bill afterward.",
+    "org": "BC Emergency Health Services",
+    "domain": "bcehs.ca",
+    "url": "https://www.bcehs.ca/"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Tip",
+    "text": "MSP covers doctor visits and hospital care, but not dental, prescriptions, or glasses. Know the gaps before you need them.",
+    "org": "Province of BC - What MSP Covers",
+    "domain": "gov.bc.ca",
+    "url": "https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/benefits/services-covered-by-msp"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Next step",
+    "text": "Register for Fair PharmaCare to lower your prescription costs. It is income-based and free to sign up for.",
+    "org": "Province of BC - PharmaCare",
+    "domain": "gov.bc.ca",
+    "url": "https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/pharmacare-for-bc-residents"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Tip",
+    "text": "Check walk-in clinic wait times online before you leave home instead of sitting in a waiting room for hours.",
+    "org": "Medimap",
+    "domain": "medimap.ca",
+    "url": "https://medimap.ca/"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Tip",
+    "text": "You can request a free interpreter for medical appointments. You do not have to bring a family member to translate.",
+    "org": "PHSA Provincial Language Service",
+    "domain": "phsa.ca",
+    "url": "https://www.phsa.ca/our-services/programs-services/provincial-language-service"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Action",
+    "text": "Routine vaccines for children and adults are free in BC. Book through your local health unit or a pharmacy.",
+    "org": "ImmunizeBC",
+    "domain": "immunizebc.ca",
+    "url": "https://immunizebc.ca/"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Tip",
+    "text": "Dental care is not covered by MSP. Dental schools and community clinics offer treatment at reduced rates.",
+    "org": "BC Dental Association",
+    "domain": "bcdental.org",
+    "url": "https://www.bcdental.org/"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Tip",
+    "text": "Search for clinics, labs, hospitals, and specialists near you by postal code.",
+    "org": "HealthLink BC - Find Services",
+    "domain": "healthlinkbc.ca",
+    "url": "https://www.healthlinkbc.ca/health-services/find-health-services"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Tip",
+    "text": "A plain-language overview of how BC's health system is organized and how to get into it.",
+    "org": "Province of BC - Accessing Health Care",
+    "domain": "gov.bc.ca",
+    "url": "https://www2.gov.bc.ca/gov/content/health/accessing-health-care"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Tip",
+    "text": "Confidential sexual health clinics operate across BC at low or no cost, with no referral needed.",
+    "org": "Options for Sexual Health",
+    "domain": "optionsforsexualhealth.org",
+    "url": "https://www.optionsforsexualhealth.org/"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Next step",
+    "text": "Pregnancy care is covered by MSP. You can choose a family doctor, an obstetrician, or a registered midwife.",
+    "org": "Perinatal Services BC",
+    "domain": "perinatalservicesbc.ca",
+    "url": "https://www.perinatalservicesbc.ca/"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Tip",
+    "text": "Foundry centres offer free health care, counselling, and drop-in support for anyone aged 12 to 24.",
+    "org": "Foundry BC",
+    "domain": "foundrybc.ca",
+    "url": "https://foundrybc.ca/"
+  },
+  {
+    "category": "healthcare",
+    "label": "Healthcare",
+    "type": "Next step",
+    "text": "BC offers free screening for cervical, breast, and colon cancer at set ages. Check which ones apply to you.",
+    "org": "BC Cancer - Screening",
+    "domain": "bccancer.bc.ca",
+    "url": "https://www.bccancer.bc.ca/screening"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Action",
+    "text": "You can drive on a valid licence from your home country for up to 90 days. After that you need a BC licence.",
+    "org": "ICBC - Moving to BC",
+    "domain": "icbc.com",
+    "url": "https://www.icbc.com/driver-licensing/moving-bc"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Next step",
+    "text": "If your country has no exchange agreement with BC, expect a knowledge test, a road test, and time in graduated licensing.",
+    "org": "ICBC - Getting Licensed",
+    "domain": "icbc.com",
+    "url": "https://www.icbc.com/driver-licensing/getting-licensed"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Tip",
+    "text": "Basic vehicle insurance in BC comes from ICBC, a public insurer. You only shop around for optional extra coverage.",
+    "org": "ICBC",
+    "domain": "icbc.com",
+    "url": "https://www.icbc.com/"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Action",
+    "text": "In Metro Vancouver, get a Compass Card. Fares are cheaper than paying single trips, and it works on bus, SkyTrain, and SeaBus.",
+    "org": "Compass Card",
+    "domain": "compasscard.ca",
+    "url": "https://www.compasscard.ca/"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Tip",
+    "text": "Plan trips, check schedules, and work out fare zones for Metro Vancouver's transit network.",
+    "org": "TransLink",
+    "domain": "translink.ca",
+    "url": "https://www.translink.ca/"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Tip",
+    "text": "Outside Metro Vancouver, BC Transit runs bus service in most cities and many smaller communities.",
+    "org": "BC Transit",
+    "domain": "bctransit.com",
+    "url": "https://www.bctransit.com/"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Tip",
+    "text": "BC Ferries connects Vancouver Island, the Gulf Islands, and coastal towns. Reserve ahead in summer or expect long waits.",
+    "org": "BC Ferries",
+    "domain": "bcferries.com",
+    "url": "https://www.bcferries.com/"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Action",
+    "text": "Check DriveBC before any drive outside the city. Mountain highways close for snow, flooding, and rockslides.",
+    "org": "DriveBC",
+    "domain": "drivebc.ca",
+    "url": "https://www.drivebc.ca/"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Tip",
+    "text": "Winter tires are legally required on most BC highways from October to April, and you can be fined without them.",
+    "org": "Province of BC - Winter Driving",
+    "domain": "gov.bc.ca",
+    "url": "https://www2.gov.bc.ca/gov/content/transportation/driving-and-cycling/traveller-information/seasonal/winter-driving"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Tip",
+    "text": "Metro Vancouver has a large protected bike network, and bikes travel free on SkyTrain and SeaBus.",
+    "org": "HUB Cycling",
+    "domain": "bikehub.ca",
+    "url": "https://bikehub.ca/"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Next step",
+    "text": "Car sharing often costs less than owning. Modo is a local co-op with vehicles across Metro Vancouver and Victoria.",
+    "org": "Modo Car Co-op",
+    "domain": "modo.coop",
+    "url": "https://www.modo.coop/"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Next step",
+    "text": "Evo charges by the minute and lets you end your trip anywhere in the home zone, with no monthly commitment.",
+    "org": "Evo Car Share",
+    "domain": "evo.ca",
+    "url": "https://www.evo.ca/"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Tip",
+    "text": "HandyDART offers door-to-door transit for people who cannot use regular buses without assistance.",
+    "org": "TransLink - HandyDART",
+    "domain": "translink.ca",
+    "url": "https://www.translink.ca/rider-guide/transit-accessibility/handydart"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Tip",
+    "text": "BC's rules of the road, licensing steps, and cycling regulations gathered in one place.",
+    "org": "Province of BC - Driving & Cycling",
+    "domain": "gov.bc.ca",
+    "url": "https://www2.gov.bc.ca/gov/content/transportation/driving-and-cycling"
+  },
+  {
+    "category": "transportation",
+    "label": "Transport",
+    "type": "Action",
+    "text": "If you do not drive, your BC Services Card doubles as government-issued photo ID.",
+    "org": "Province of BC - BC Services Card",
+    "domain": "gov.bc.ca",
+    "url": "https://www.gov.bc.ca/bcservicescard"
   }
 ];
 
