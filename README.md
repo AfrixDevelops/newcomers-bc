@@ -52,6 +52,7 @@ HTML at build time.
 npm install
 npm run dev      # http://localhost:3000
 npm run build    # static site emitted to ./out
+npm run og       # regenerate the social cards in public/og
 ```
 
 ## Deploying
@@ -62,7 +63,43 @@ from the repository name automatically, so the site works at
 `username.github.io/<repo>` without configuration.
 
 To move to a custom domain later, add a `public/CNAME` file containing the
-domain. The workflow detects it and builds at the root path instead.
+domain. The workflow detects it and builds at the root path instead, and
+derives `NEXT_PUBLIC_SITE_URL` from the same file so canonical links, the
+sitemap and the social cards all follow the move without a code change.
+
+## Search and sharing
+
+Every page carries a canonical URL, a written description, Open Graph and
+Twitter card tags, and a 1200×630 preview image. Category pages add
+`BreadcrumbList` and `CollectionPage` structured data; the home page declares
+`WebSite`. `app/sitemap.ts` and `app/robots.ts` generate their files at build
+time.
+
+Two things are deliberate rather than accidental:
+
+**The preview cards are committed, not generated at build time.** Next can
+produce them from an `opengraph-image` route, but a static export writes that
+route to an *extensionless* file and GitHub Pages types responses by file
+extension, so scrapers receive `application/octet-stream` and drop the card.
+`scripts/generate-og.mjs` renders real `.png` files into `public/og/` instead,
+reading the hero artwork straight out of `HeroGraphic.tsx` so the cards cannot
+drift from the site. Run `npm run og` after adding or renaming a category.
+
+**`robots.txt` does nothing until the custom domain is live.** Crawlers read it
+from the domain root only, and a project Pages site is served from `/<repo>`.
+The file is correct and ready; until the domain moves, submit the sitemap by
+hand.
+
+### Before launch
+
+- [ ] Verify the property in [Google Search Console](https://search.google.com/search-console) and submit `sitemap.xml`
+- [ ] Same in [Bing Webmaster Tools](https://www.bing.com/webmasters), which also feeds DuckDuckGo
+- [ ] Check a card renders in [the Facebook debugger](https://developers.facebook.com/tools/debug/) and one real Slack or WhatsApp paste
+- [ ] Run the category pages through the [Rich Results Test](https://search.google.com/test/rich-results)
+
+Do the domain switch before promoting the site anywhere. Indexing and links
+earned on the `github.io` URL have to be re-consolidated onto the new domain
+afterwards, which costs time that a switch made first does not.
 
 ## Roadmap
 

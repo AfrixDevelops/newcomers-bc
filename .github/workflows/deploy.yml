@@ -32,15 +32,23 @@ jobs:
 
       - name: Build static site
         # Serve from /<repo> unless a custom domain (CNAME) is configured.
+        # NEXT_PUBLIC_SITE_URL has to match exactly: it is what canonical
+        # links, the sitemap and the social cards resolve against, and a
+        # canonical pointing at the wrong host splits the site in two as
+        # far as a crawler is concerned.
         run: |
           if [ -f "public/CNAME" ]; then
+            export NEXT_PUBLIC_SITE_URL="https://$(tr -d '[:space:]' < public/CNAME)"
             echo "Custom domain found, building at root path"
-            npm run build
           else
             export NEXT_PUBLIC_BASE_PATH="/${GITHUB_REPOSITORY#*/}"
+            # Pages serves the owner lowercased; the canonical has to match.
+            OWNER=$(echo "${GITHUB_REPOSITORY%%/*}" | tr '[:upper:]' '[:lower:]')
+            export NEXT_PUBLIC_SITE_URL="https://${OWNER}.github.io${NEXT_PUBLIC_BASE_PATH}"
             echo "Building with basePath=$NEXT_PUBLIC_BASE_PATH"
-            npm run build
           fi
+          echo "Site URL: $NEXT_PUBLIC_SITE_URL"
+          npm run build
 
       - name: Add .nojekyll
         # Without this, GitHub Pages strips the _next directory.
