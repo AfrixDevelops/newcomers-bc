@@ -217,6 +217,15 @@
   border: 2px solid var(--c);
 }
 
+/* The shared hover only recolours the border, which these four already
+   carry, so the priority tier gets its own: a wash of the category
+   colour and a lift shadowed in that same colour. */
+.topicCardLarge:hover,
+.topicCardLarge:focus-visible {
+  background: color-mix(in srgb, var(--c) 7%, var(--surface));
+  box-shadow: var(--shadow), 0 14px 28px -16px color-mix(in srgb, var(--c) 65%, transparent);
+}
+
 .badge {
   display: flex;
   align-items: center;
@@ -339,7 +348,8 @@
 @media (prefers-reduced-motion: no-preference) {
   .topicCard,
   .result {
-    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease,
+      background-color 0.15s ease;
   }
 
   .topicCard:hover,
@@ -347,9 +357,33 @@
     transform: translateY(-3px);
   }
 
+  /* A deeper lift than the standard cards, and the two moving parts that
+     point at where the card goes: the badge swells, the arrow steps out. */
+  .topicCardLarge .badge,
+  .topicCardLarge .topicGo svg {
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .topicCardLarge:hover,
+  .topicCardLarge:focus-visible {
+    transform: translateY(-5px);
+  }
+
+  .topicCardLarge:hover .badge,
+  .topicCardLarge:focus-visible .badge {
+    transform: scale(1.08);
+  }
+
+  .topicCardLarge:hover .topicGo svg,
+  .topicCardLarge:focus-visible .topicGo svg {
+    transform: translateX(4px);
+  }
+
+  /* backwards, not both: the end state already matches the card at rest,
+     and a forward fill would keep outranking the :hover transform. */
   .gridLarge .topicCard,
   .grid .topicCard {
-    animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
   }
 
   /* Staggered arrival, capped at eight so the last card is never slow. */
