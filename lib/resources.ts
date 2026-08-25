@@ -406,15 +406,21 @@ export const resources: Resource[] = [
     "category": "employment",
     "label": "Employment",
     "type": "Community",
-    "text": "Newcomers often share real resume and job-search experiences on Reddit, useful alongside, not instead of, official advice.",
-    "note": "No official link. Search r/PersonalFinanceCanada or r/AskACanadian for firsthand accounts."
+    "text": "Newcomers often share real resume and job-search experiences, useful alongside, not instead of, official advice.",
+    "org": "r/canadaexpats",
+    "domain": "reddit.com",
+    "url": "https://www.reddit.com/r/canadaexpats/",
+    "note": "Peer discussion, not official guidance. Cross-check anything important with WorkBC."
   },
   {
     "category": "employment",
     "label": "Employment",
     "type": "Community",
-    "text": "Some newcomers discuss which work-experience documents held up best for BC PNP applications.",
-    "note": "No official link. Search Reddit for firsthand accounts, and confirm requirements with IRCC directly."
+    "text": "Applicants compare which work-experience documents held up best for BC PNP applications.",
+    "org": "CanadaVisa Discussion Board",
+    "domain": "canadavisa.com",
+    "url": "https://www.canadavisa.com/canada-immigration-discussion-board/",
+    "note": "Peer discussion, not official guidance. Confirm document requirements with IRCC directly."
   },
   {
     "category": "housing",
@@ -672,8 +678,11 @@ export const resources: Resource[] = [
     "category": "legal",
     "label": "Legal",
     "type": "Community",
-    "text": "Other newcomers sometimes share firsthand accounts of workplace rights issues and how they resolved them.",
-    "note": "No official link. Treat as anecdotal, and confirm anything important with Legal Aid BC or Employment Standards."
+    "text": "People share firsthand accounts of workplace rights issues in Canada and how they resolved them.",
+    "org": "r/legaladvicecanada",
+    "domain": "reddit.com",
+    "url": "https://www.reddit.com/r/legaladvicecanada/",
+    "note": "Peer discussion, not legal advice. For your own situation, contact Legal Aid BC or Employment Standards."
   },
   {
     "category": "social",
@@ -1165,8 +1174,11 @@ export const resources: Resource[] = [
     "category": "working-holiday",
     "label": "IEC",
     "type": "Community",
-    "text": "Working holidaymakers often share which cities and sectors are hiring fastest for short-term work.",
-    "note": "No official link. Search Reddit for firsthand accounts, and confirm anything important with IRCC."
+    "text": "Working holidaymakers share which cities and sectors are hiring fastest for short-term work.",
+    "org": "r/WorkingHolidayCanada",
+    "domain": "reddit.com",
+    "url": "https://www.reddit.com/r/WorkingHolidayCanada/",
+    "note": "Peer discussion, not official guidance. Confirm permit rules with IRCC."
   },
   {
     "category": "working-holiday",
@@ -1253,8 +1265,11 @@ export const resources: Resource[] = [
     "category": "education",
     "label": "Education",
     "type": "Community",
-    "text": "Newcomers sometimes share which library programs and free courses were most useful for self-directed learning.",
-    "note": "No official link. Search Reddit for firsthand accounts, and check with NewToBC for verified programs."
+    "text": "Residents recommend which library programs and free local courses are actually worth your time.",
+    "org": "r/britishcolumbia",
+    "domain": "reddit.com",
+    "url": "https://www.reddit.com/r/britishcolumbia/",
+    "note": "Peer discussion, not official guidance. NewToBC lists verified library programs."
   },
   {
     "category": "education",
@@ -1269,8 +1284,11 @@ export const resources: Resource[] = [
     "category": "education",
     "label": "Education",
     "type": "Community",
-    "text": "Discussion on how BC institutions and employers evaluate the quality of credentials earned outside Canada.",
-    "note": "No official link. Confirm anything important with the Office for International Credential Recognition."
+    "text": "Discussion on how Canadian institutions and employers evaluate credentials earned outside Canada.",
+    "org": "r/ImmigrationCanada",
+    "domain": "reddit.com",
+    "url": "https://www.reddit.com/r/ImmigrationCanada/",
+    "note": "Peer discussion, not official guidance. The Office for International Credential Recognition is the authority."
   }
 ];
 

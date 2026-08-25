@@ -63,6 +63,25 @@
   opacity: 0.9;
 }
 
+/* Community links are peer discussion, not vetted guidance. The outline
+   treatment keeps them clearly subordinate to the official resources. */
+.buttonSecondary {
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid var(--border);
+}
+
+.buttonSecondary:hover {
+  color: var(--ink);
+  border-color: var(--ink-soft);
+  opacity: 1;
+}
+
+.buttonSecondary .org,
+.buttonSecondary .domain {
+  color: inherit;
+}
+
 .org {
   color: var(--resource-btn-text);
 }
@@ -84,13 +103,15 @@
   display: inline-flex;
 }
 
+/* Caveat block. Sits between the tip and its link so the qualification
+   is read before the link is followed. */
 .note {
   margin: 0;
-  padding-top: 9px;
-  font-size: 0.82rem;
-  font-style: italic;
+  padding: 8px 10px;
+  font-size: 0.8rem;
   color: var(--ink-soft);
-  border-top: 1px dashed var(--border);
+  background: var(--surface-alt);
+  border-radius: 8px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

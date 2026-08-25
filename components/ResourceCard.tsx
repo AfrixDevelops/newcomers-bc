@@ -14,9 +14,13 @@ export function ResourceCard({ resource }: { resource: Resource }) {
 
       <p className={styles.text}>{resource.text}</p>
 
-      {resource.url ? (
+      {/* Community cards carry a caveat: the link is peer discussion,
+          not vetted guidance, so it is qualified before it is offered. */}
+      {resource.note && <p className={styles.note}>{resource.note}</p>}
+
+      {resource.url && (
         <a
-          className={styles.button}
+          className={`${styles.button} ${isCommunity ? styles.buttonSecondary : ''}`}
           href={resource.url}
           target="_blank"
           rel="noopener noreferrer"
@@ -28,8 +32,6 @@ export function ResourceCard({ resource }: { resource: Resource }) {
           </span>
           <span className="sr-only">(opens in a new tab)</span>
         </a>
-      ) : (
-        <p className={styles.note}>{resource.note}</p>
       )}
     </article>
   );
