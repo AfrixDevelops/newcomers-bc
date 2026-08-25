@@ -8,6 +8,8 @@
   --snow: #f7f5ef;
   --water: #1160be;
   --wave: #7fb4ef;
+  --orca: #10222c;
+  --foam: #eaf2fb;
 
   display: block;
   width: 100%;
@@ -25,6 +27,8 @@
     --snow: #dfe9ec;
     --water: #14406e;
     --wave: #4f89c9;
+    --orca: #08181f;
+    --foam: #b9d3ee;
   }
 }
 
@@ -36,6 +40,8 @@
   --snow: #dfe9ec;
   --water: #14406e;
   --wave: #4f89c9;
+  --orca: #08181f;
+  --foam: #b9d3ee;
 }
 
 .sun {
@@ -62,4 +68,20 @@
 }
 .waveB {
   opacity: 0.6;
+}
+
+/* The body sits close in tone to the ranges behind it, so the white
+   markings are what carry the silhouette in both themes. */
+.orca {
+  fill: var(--orca);
+}
+.orcaWhite {
+  fill: var(--snow);
+}
+.foam {
+  fill: var(--foam);
+}
+.foamSoft {
+  fill: var(--foam);
+  opacity: 0.7;
 }
