@@ -1,0 +1,103 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 15px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-tile);
+  box-shadow: var(--shadow);
+}
+
+/* Community cards carry peer knowledge rather than a vetted link. */
+.community {
+  border-style: dashed;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.pill {
+  margin-left: auto;
+  padding: 3px 9px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.text {
+  font-size: 0.94rem;
+  color: var(--ink);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--resource-btn-text);
+  background: var(--resource-btn-bg);
+  border-radius: var(--radius-control);
+}
+
+.button:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.org {
+  color: var(--resource-btn-text);
+}
+
+.domain {
+  color: var(--resource-btn-text);
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.domain::before {
+  content: '\00b7';
+  margin: 0 6px;
+  opacity: 0.65;
+}
+
+.arrow {
+  margin-left: auto;
+  display: inline-flex;
+}
+
+.note {
+  margin: 0;
+  padding-top: 9px;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  border-top: 1px dashed var(--border);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card {
+    transition: transform 0.15s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+  }
+}

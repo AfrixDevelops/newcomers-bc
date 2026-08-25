@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Newcomers BC</title>
+  <!-- Maple leaf on Canadian red. Solid shapes only, so it stays
+       readable at 16px in a browser tab. -->
+  <rect width="64" height="64" rx="12" fill="#d52b1e"/>
+  <path
+    fill="#ffffff"
+    d="M32 4 35 14 43 12 41 22 52 20 50 27 61 34 57 38 59 45 46 43 44 48 36 41 35 58 29 58 28 41 20 48 18 43 5 45 7 38 3 34 14 27 12 20 23 22 21 12 29 14Z"/>
+</svg>

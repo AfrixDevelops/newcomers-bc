@@ -1,0 +1,130 @@
+/* ---------------------------------------------------------------
+   Design tokens. Light palette lives on bare :root; the two dark
+   blocks below redefine ONLY the tokens, so a component never needs
+   to know which theme it is in.
+   --------------------------------------------------------------- */
+:root {
+  --bg: #f7f5ef;
+  --surface: #ffffff;
+  --surface-alt: #f1efe6;
+  --border: #e6e2d5;
+  --ink: #1b1b17;
+  --ink-soft: #63675e;
+  --accent: #2454c7;
+  --accent-contrast: #ffffff;
+  --icon-bg: #efede3;
+  --icon-ink: #26281f;
+
+  /* Fixed brand colour for resource buttons: identical in both themes. */
+  --resource-btn-bg: #4c608a;
+  --resource-btn-text: #ffffff;
+
+  --shadow: 0 1px 2px rgba(20, 20, 15, 0.04), 0 8px 22px -12px rgba(20, 20, 15, 0.12);
+
+  --radius-card: 14px;
+  --radius-tile: 12px;
+  --radius-control: 10px;
+
+  --maxw: 1180px;
+  --gutter: clamp(18px, 5vw, 40px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #14171a;
+    --surface: #1b1f22;
+    --surface-alt: #20252a;
+    --border: #2b3136;
+    --ink: #eceeec;
+    --ink-soft: #9ba3a0;
+    --accent: #83a9ff;
+    --accent-contrast: #0e1520;
+    --icon-bg: #242a2e;
+    --icon-ink: #eceeec;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 26px -14px rgba(0, 0, 0, 0.6);
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #14171a;
+  --surface: #1b1f22;
+  --surface-alt: #20252a;
+  --border: #2b3136;
+  --ink: #eceeec;
+  --ink-soft: #9ba3a0;
+  --accent: #83a9ff;
+  --accent-contrast: #0e1520;
+  --icon-bg: #242a2e;
+  --icon-ink: #eceeec;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 26px -14px rgba(0, 0, 0, 0.6);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-public-sans), -apple-system, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+/* Visible only to screen readers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 60px;
+}
