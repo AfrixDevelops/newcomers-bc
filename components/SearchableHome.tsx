@@ -100,14 +100,6 @@ export function SearchableHome() {
               </button>
             )}
           </div>
-
-          <p className={styles.stats}>
-            <strong>{resources.length}</strong> resources
-            <span className={styles.statDot} />
-            <strong>{categories.length}</strong> topics
-            <span className={styles.statDot} />
-            all free
-          </p>
         </div>
 
         <div className={styles.heroArt} aria-hidden={false}>

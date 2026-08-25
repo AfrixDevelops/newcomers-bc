@@ -128,31 +128,6 @@
   color: var(--ink);
 }
 
-/* ---------------- stats ---------------- */
-.stats {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-}
-
-.stats strong {
-  font-family: var(--font-archivo), sans-serif;
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--ink);
-  margin-right: 2px;
-}
-
-.statDot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--ink-soft);
-  opacity: 0.5;
-}
-
 .heroArt {
   min-width: 0;
 }
