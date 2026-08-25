@@ -50,13 +50,19 @@ export default async function CategoryPage({
         Back to topics
       </Link>
 
-      <header className={styles.header}>
+      <header
+        className={styles.header}
+        style={{ '--cat': cat.color, '--cat-dark': cat.colorDark } as React.CSSProperties}
+      >
         <span className={styles.badge}>
-          <CategoryIcon name={cat.icon} size={24} />
+          <CategoryIcon name={cat.icon} size={26} />
         </span>
-        <h1 className={styles.title}>{cat.title}</h1>
+        <div className={styles.headerText}>
+          <h1 className={styles.title}>{cat.title}</h1>
+          <p className={styles.subtitle}>{cat.subtitle}</p>
+          <p className={styles.count}>{items.length} resources</p>
+        </div>
       </header>
-      <p className={styles.subtitle}>{cat.subtitle}</p>
 
       <div className={styles.grid}>
         {items.map((resource, i) => (

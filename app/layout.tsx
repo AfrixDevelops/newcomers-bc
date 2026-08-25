@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Public_Sans } from 'next/font/google';
+import { Archivo, Public_Sans } from 'next/font/google';
 import { BackToTop } from '@/components/BackToTop';
 import './globals.css';
 
@@ -7,6 +7,14 @@ const publicSans = Public_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   variable: '--font-public-sans',
+  display: 'swap',
+});
+
+/** Display face. Carries the oversized headings; body stays Public Sans. */
+const archivo = Archivo({
+  subsets: ['latin'],
+  weight: ['600', '700', '800', '900'],
+  variable: '--font-archivo',
   display: 'swap',
 });
 
@@ -32,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={publicSans.variable}>
+    <html lang="en" className={`${publicSans.variable} ${archivo.variable}`}>
       <body>
         {children}
         <BackToTop />

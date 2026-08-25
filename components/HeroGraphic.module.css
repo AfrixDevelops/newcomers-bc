@@ -1,0 +1,65 @@
+/* Palette is defined here rather than in the SVG so both themes stay
+   in one place and the markup carries no literal colours. */
+.graphic {
+  --sun: #e0a52c;
+  --range-back: #a7c4c9;
+  --range-mid: #2f7f8c;
+  --range-front: #12525e;
+  --snow: #f7f5ef;
+  --water: #1160be;
+  --wave: #7fb4ef;
+
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  overflow: visible;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .graphic {
+    --sun: #f0c063;
+    --range-back: #2c4750;
+    --range-mid: #17636f;
+    --range-front: #0c3a45;
+    --snow: #dfe9ec;
+    --water: #14406e;
+    --wave: #4f89c9;
+  }
+}
+
+:root[data-theme='dark'] .graphic {
+  --sun: #f0c063;
+  --range-back: #2c4750;
+  --range-mid: #17636f;
+  --range-front: #0c3a45;
+  --snow: #dfe9ec;
+  --water: #14406e;
+  --wave: #4f89c9;
+}
+
+.sun {
+  fill: var(--sun);
+}
+.rangeBack {
+  fill: var(--range-back);
+}
+.rangeMid {
+  fill: var(--range-mid);
+}
+.rangeFront {
+  fill: var(--range-front);
+}
+.snow {
+  fill: var(--snow);
+}
+.water {
+  fill: var(--water);
+}
+.waveA,
+.waveB {
+  fill: var(--wave);
+}
+.waveB {
+  opacity: 0.6;
+}
