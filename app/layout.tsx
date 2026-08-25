@@ -1,7 +1,15 @@
 import type { Metadata } from 'next';
 import { Archivo, Public_Sans } from 'next/font/google';
 import { BackToTop } from '@/components/BackToTop';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import './globals.css';
+
+/**
+ * Applies a saved theme choice before the browser paints, so someone who
+ * picked light on a dark-mode device never sees a flash of the wrong one.
+ * Has to be a blocking inline script; anything deferred paints first.
+ */
+const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}`;
 
 const publicSans = Public_Sans({
   subsets: ['latin'],
@@ -40,10 +48,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${publicSans.variable} ${archivo.variable}`}>
+    <html lang="en" className={`${publicSans.variable} ${archivo.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         {children}
         <BackToTop />
+        <ThemeToggle />
       </body>
     </html>
   );
