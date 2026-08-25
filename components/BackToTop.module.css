@@ -1,0 +1,67 @@
+/* Spans the first screenful. While it is in view the page is near the
+   top, so the button stays hidden. Never painted. */
+.sentinel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 520px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.button {
+  position: fixed;
+  right: clamp(16px, 4vw, 32px);
+  bottom: clamp(16px, 4vw, 32px);
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+
+  /* Hidden state: invisible, unclickable, and out of the tab order. */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .button {
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s,
+      color 0.15s ease, border-color 0.15s ease;
+  }
+}
+
+/* Comfortable thumb target on small screens. */
+@media (max-width: 560px) {
+  .button {
+    width: 48px;
+    height: 48px;
+  }
+}
