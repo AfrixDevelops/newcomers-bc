@@ -2,20 +2,31 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft } from '@phosphor-icons/react/dist/ssr';
-import { categories, getCategory } from '@/lib/categories';
-import { resourcesByCategory } from '@/lib/resources';
 import { CategoryIcon } from '@/components/CategoryIcon';
 import { Footer } from '@/components/Footer';
 import { JsonLd } from '@/components/JsonLd';
+import { LocaleHome } from '@/components/LocaleHome';
 import { ResourceCard } from '@/components/ResourceCard';
-import { absoluteUrl, siteName } from '@/lib/site';
+import { categories, getCategory } from '@/lib/categories';
+import { isLocale, localeTags, locales, ogLocaleTags, type Locale } from '@/lib/i18n/config';
+import { dictionaries } from '@/lib/i18n/dictionaries';
+import { resourcesByCategory } from '@/lib/resources';
+import { absoluteUrl, hreflangAlternates, siteName } from '@/lib/site';
 import styles from './category.module.css';
 
-type Params = { category: string };
+type Params = { slug: string };
 
-/** Pre-renders one static HTML file per category at build time. */
+/**
+ * "/housing/" and "/es/" are both exactly one path segment past the
+ * root, so Next needs one dynamic route to cover both value spaces —
+ * it refuses two sibling folders ([category] and [locale]) that would
+ * match the same URL shape ambiguously. This route produces every
+ * category slug (the English pages, unchanged from before) and every
+ * locale code (each locale's home page) from a single param list, and
+ * the page below branches on which kind of value it received.
+ */
 export function generateStaticParams(): Params[] {
-  return categories.map((c) => ({ category: c.slug }));
+  return [...categories.map((c) => ({ slug: c.slug })), ...locales.map((l) => ({ slug: l }))];
 }
 
 export async function generateMetadata({
@@ -23,8 +34,36 @@ export async function generateMetadata({
 }: {
   params: Promise<Params>;
 }): Promise<Metadata> {
-  const { category } = await params;
-  const cat = getCategory(category);
+  const { slug } = await params;
+
+  if (isLocale(slug)) {
+    const dict = dictionaries[slug];
+    const title = `${siteName} · ${dict.meta.homeTitleSuffix}`;
+    const description = dict.meta.homeDescription;
+    const images = [{ url: '/og/home.png', width: 1200, height: 630, alt: title }];
+
+    return {
+      // { absolute } bypasses the root layout's "%s · Newcomers BC"
+      // template. Without it, siteName here would be added twice: once
+      // by hand to match the English home's brand-first title format,
+      // and once more by the template.
+      title: { absolute: title },
+      description,
+      alternates: { canonical: `/${slug}`, languages: hreflangAlternates() },
+      openGraph: {
+        siteName,
+        title,
+        description,
+        url: absoluteUrl(slug),
+        type: 'website',
+        locale: ogLocaleTags[slug],
+        images,
+      },
+      twitter: { card: 'summary_large_image', title, description, images },
+    };
+  }
+
+  const cat = getCategory(slug);
   if (!cat) return { title: 'Not found' };
 
   /**
@@ -33,9 +72,6 @@ export async function generateMetadata({
    * hence the count and the province spelled out.
    */
   const description = `${cat.subtitle} ${resourcesByCategory(cat.slug).length} free, trusted resources for newcomers to British Columbia.`;
-  const url = absoluteUrl(cat.slug);
-
-  /** One card per category, committed by scripts/generate-og.mjs. */
   const images = [
     { url: `/og/${cat.slug}.png`, width: 1200, height: 630, alt: `${cat.title} · ${siteName}` },
   ];
@@ -43,12 +79,12 @@ export async function generateMetadata({
   return {
     title: cat.title,
     description,
-    alternates: { canonical: `/${cat.slug}` },
+    alternates: { canonical: `/${cat.slug}`, languages: hreflangAlternates(cat.slug) },
     openGraph: {
       siteName,
       title: `${cat.title} · ${siteName}`,
       description,
-      url,
+      url: absoluteUrl(cat.slug),
       type: 'article',
       locale: 'en_CA',
       images,
@@ -62,13 +98,42 @@ export async function generateMetadata({
   };
 }
 
-export default async function CategoryPage({
-  params,
-}: {
-  params: Promise<Params>;
-}) {
-  const { category } = await params;
-  const cat = getCategory(category);
+function LocaleHomePage({ locale }: { locale: Locale }) {
+  const dict = dictionaries[locale];
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteName,
+    url: absoluteUrl(locale),
+    description: dict.meta.homeDescription,
+    inLanguage: localeTags[locale],
+    about: { '@type': 'Place', name: 'British Columbia, Canada' },
+    audience: { '@type': 'Audience', audienceType: 'Immigrants and newcomers to Canada' },
+    isAccessibleForFree: true,
+  };
+
+  return (
+    <main className="wrap">
+      <JsonLd data={websiteSchema} />
+      <LocaleHome dict={dict} locale={locale} />
+      <Footer
+        disclaimerLabel={dict.footer.disclaimerLabel}
+        disclaimer={dict.footer.disclaimer}
+        aboutLinksLabel={dict.footer.aboutLinksLabel}
+        aboutLinks={dict.footer.aboutLinks}
+        translationNote={dict.footer.translationNote}
+      />
+    </main>
+  );
+}
+
+export default async function SlugPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+
+  if (isLocale(slug)) return <LocaleHomePage locale={slug} />;
+
+  const cat = getCategory(slug);
   if (!cat) notFound();
 
   const items = resourcesByCategory(cat.slug);

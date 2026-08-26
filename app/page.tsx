@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import { Footer } from '@/components/Footer';
 import { JsonLd } from '@/components/JsonLd';
 import { SearchableHome } from '@/components/SearchableHome';
-import { absoluteUrl, siteDescription, siteName } from '@/lib/site';
+import { absoluteUrl, hreflangAlternates, siteDescription, siteName } from '@/lib/site';
 
 /** Declared here rather than on the layout so the 404 cannot inherit it. */
 export const metadata: Metadata = {
-  alternates: { canonical: '/' },
+  alternates: { canonical: '/', languages: hreflangAlternates() },
 };
 
 /**

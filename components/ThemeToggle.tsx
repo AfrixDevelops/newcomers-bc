@@ -1,9 +1,17 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import { Moon, Sun } from '@phosphor-icons/react/dist/ssr';
+import { currentLocale } from '@/lib/i18n/config';
+import { dictionaries } from '@/lib/i18n/dictionaries';
 import styles from './ThemeToggle.module.css';
 
 export function ThemeToggle() {
+  /** See BackToTop: rendered outside the [locale] tree, so read the URL. */
+  const locale = currentLocale(usePathname() ?? '/');
+  const lightLabel = locale === 'en' ? 'Switch to light mode' : dictionaries[locale].common.lightMode;
+  const darkLabel = locale === 'en' ? 'Switch to dark mode' : dictionaries[locale].common.darkMode;
+
   function toggle() {
     const root = document.documentElement;
     const explicit = root.getAttribute('data-theme');
@@ -38,11 +46,11 @@ export function ThemeToggle() {
     <button type="button" onClick={toggle} className={styles.button}>
       <span className={styles.sun}>
         <Sun size={20} weight="bold" aria-hidden />
-        <span className="sr-only">Switch to light mode</span>
+        <span className="sr-only">{lightLabel}</span>
       </span>
       <span className={styles.moon}>
         <Moon size={20} weight="bold" aria-hidden />
-        <span className="sr-only">Switch to dark mode</span>
+        <span className="sr-only">{darkLabel}</span>
       </span>
     </button>
   );

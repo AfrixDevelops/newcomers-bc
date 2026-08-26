@@ -35,12 +35,13 @@ Every card is labelled:
 
 Content lives entirely in [`lib/resources.ts`](lib/resources.ts) and
 [`lib/categories.ts`](lib/categories.ts) as typed data, not markup. One
-`<ResourceCard>` component renders all 140 entries, and a single dynamic route
-(`app/[category]/page.tsx`) generates all 10 category pages at build time via
-`generateStaticParams`. Adding a resource means adding one object to an array.
+`<ResourceCard>` component renders every entry, and `app/[slug]/page.tsx` plus
+`app/[slug]/[category]/page.tsx` generate every category and locale page at
+build time via `generateStaticParams`. Adding a resource means adding one
+object to an array.
 
-That separation is what makes the planned multilingual support tractable: the
-strings are already isolated from the components.
+That separation is what made the multilingual UI tractable: the strings were
+already isolated from the components before any translation work started.
 
 Search runs client-side over a prebuilt index. It is the only client component
 on the site — everything else is a React Server Component rendered to static
@@ -101,9 +102,42 @@ Do the domain switch before promoting the site anywhere. Indexing and links
 earned on the `github.io` URL have to be re-consolidated onto the new domain
 afterwards, which costs time that a switch made first does not.
 
+## Languages
+
+The site translates its navigation, headings and category titles into seven
+languages: Spanish, Japanese, Korean, Punjabi, Tagalog, and Simplified and
+Traditional Chinese, served at `/es/`, `/ja/`, `/ko/`, `/pa/`, `/tl/`,
+`/zh-Hans/` and `/zh-Hant/`. English stays unprefixed at the existing URLs.
+
+**Resource tips and their links stay in English in every locale, on purpose.**
+They point to English-language government and nonprofit sites regardless of
+the page's own language, and machine-translating legal, healthcare and
+financial guidance for people making real decisions on it is an accuracy risk,
+not a cosmetic one. A translated page tells someone which door to knock on;
+what's behind the door is unchanged. Each translated page says this plainly in
+its footer.
+
+All translated strings live in [`lib/i18n/dictionaries.ts`](lib/i18n/dictionaries.ts).
+They were written by an AI assistant, not reviewed by a native speaker of each
+language. Treat them as a solid first pass, not a certified translation, and
+have one checked before relying on it for anything higher-stakes than
+navigation copy.
+
+`/housing/` and `/es/` are both exactly one path segment past the root, so
+`app/[category]` and `app/[locale]` as separate route folders would have been
+an ambiguous match. Both live under one `app/[slug]/` route instead, which
+branches on whether the slug is a category or a language.
+
+Every language variant carries its own canonical URL and appears in every
+page's `hreflang` alternates and in the sitemap, so search engines can offer
+the right language directly instead of only ever surfacing the English page.
+
+Social preview cards (`public/og/*.png`) are English-only for now. Adding a
+translated set is a straightforward extension of `scripts/generate-og.mjs`,
+but wasn't part of this pass.
+
 ## Roadmap
 
-- [ ] Multilingual support (Punjabi, Mandarin, Cantonese, Tagalog, Spanish)
 - [ ] Progress checklist with local persistence
 - [ ] Map view for nearby services
 - [ ] Automated link-health checking in CI

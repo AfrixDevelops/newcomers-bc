@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { categories } from '@/lib/categories';
-import { absoluteUrl } from '@/lib/site';
+import { locales } from '@/lib/i18n/config';
+import { absoluteUrl, hreflangAlternates } from '@/lib/site';
 
 /**
  * No lastModified field. It would have to be the build date, which
@@ -12,13 +13,29 @@ import { absoluteUrl } from '@/lib/site';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    { url: absoluteUrl('/'), changeFrequency: 'weekly', priority: 1 },
-    ...categories.map((c) => ({
-      url: absoluteUrl(c.slug),
-      changeFrequency: 'monthly' as const,
-      // The first-week topics are the ones worth surfacing first.
-      priority: c.startHere ? 0.9 : 0.8,
+  const home: MetadataRoute.Sitemap = [
+    { url: absoluteUrl('/'), changeFrequency: 'weekly', priority: 1, alternates: { languages: hreflangAlternates() } },
+    ...locales.map((locale) => ({
+      url: absoluteUrl(locale),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+      alternates: { languages: hreflangAlternates() },
     })),
   ];
+
+  const categoryPages: MetadataRoute.Sitemap = categories.flatMap((c) => {
+    const priority = c.startHere ? 0.9 : 0.8;
+    const alternates = { languages: hreflangAlternates(c.slug) };
+    return [
+      { url: absoluteUrl(c.slug), changeFrequency: 'monthly' as const, priority, alternates },
+      ...locales.map((locale) => ({
+        url: absoluteUrl(`${locale}/${c.slug}`),
+        changeFrequency: 'monthly' as const,
+        priority: priority - 0.1,
+        alternates,
+      })),
+    ];
+  });
+
+  return [...home, ...categoryPages];
 }

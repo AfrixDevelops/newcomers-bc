@@ -1,3 +1,5 @@
+import { localeTags, locales } from '@/lib/i18n/config';
+
 /**
  * Absolute address the site is served from, base path included.
  *
@@ -27,4 +29,18 @@ export const siteDescription =
 export function absoluteUrl(path = '/'): string {
   const clean = path.replace(/^\/+|\/+$/g, '');
   return clean ? `${siteUrl}/${clean}/` : `${siteUrl}/`;
+}
+
+/**
+ * hreflang alternates for a given (unprefixed) route, across English and
+ * every translated locale, plus x-default for a visitor whose browser
+ * language matches none of them. Feeds both generateMetadata's
+ * `alternates.languages` and the sitemap's per-entry `alternates`.
+ */
+export function hreflangAlternates(category?: string): Record<string, string> {
+  const map: Record<string, string> = { en: absoluteUrl(category), 'x-default': absoluteUrl(category) };
+  for (const locale of locales) {
+    map[localeTags[locale]] = absoluteUrl(category ? `${locale}/${category}` : locale);
+  }
+  return map;
 }

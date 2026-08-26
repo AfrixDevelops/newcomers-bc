@@ -27,3 +27,12 @@
   font-size: 0.8rem;
   color: var(--ink-soft);
 }
+
+/* Only rendered on translated pages: flags that the tips and their
+   links are still English, so the scope reads as a choice, not a bug. */
+.note {
+  margin-top: 14px;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}

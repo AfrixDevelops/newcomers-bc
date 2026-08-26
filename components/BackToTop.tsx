@@ -1,12 +1,23 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { ArrowUp } from '@phosphor-icons/react/dist/ssr';
+import { currentLocale } from '@/lib/i18n/config';
+import { dictionaries } from '@/lib/i18n/dictionaries';
 import styles from './BackToTop.module.css';
 
 export function BackToTop() {
   const [visible, setVisible] = useState(false);
   const sentinel = useRef<HTMLDivElement>(null);
+
+  /**
+   * Rendered once from the root layout, outside the [locale] route tree,
+   * so the locale can't arrive as a prop — read it off the URL instead,
+   * the same way LanguageSwitcher does.
+   */
+  const locale = currentLocale(usePathname() ?? '/');
+  const label = locale === 'en' ? 'Back to top' : dictionaries[locale].common.backToTopLabel;
 
   /**
    * A zero-width sentinel spans the first screenful of the document.
@@ -43,7 +54,7 @@ export function BackToTop() {
         aria-hidden={!visible}
       >
         <ArrowUp size={20} weight="bold" aria-hidden />
-        <span className="sr-only">Back to top</span>
+        <span className="sr-only">{label}</span>
       </button>
     </>
   );
