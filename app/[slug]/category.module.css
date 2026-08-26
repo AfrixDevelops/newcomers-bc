@@ -25,12 +25,6 @@
   border-radius: var(--radius-card);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) .header {
-    --c: var(--cat-dark);
-  }
-}
-
 :root[data-theme='dark'] .header {
   --c: var(--cat-dark);
 }

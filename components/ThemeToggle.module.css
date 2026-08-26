@@ -29,22 +29,15 @@
 }
 
 /* Which icon shows is decided by the same selectors that drive the
-   colour tokens, so the button can never disagree with the theme. */
+   colour tokens, so the button can never disagree with the theme. The
+   bare default (moon visible) matches the page's own unconditional
+   light-mode default; there is no OS-driven block here on purpose. */
 .sun {
   display: none;
 }
 
 .moon {
   display: inline-flex;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) .sun {
-    display: inline-flex;
-  }
-  :root:not([data-theme='light']) .moon {
-    display: none;
-  }
 }
 
 :root[data-theme='dark'] .sun {

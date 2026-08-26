@@ -8,10 +8,13 @@ import './globals.css';
 
 /**
  * Applies a saved theme choice before the browser paints, so someone who
- * picked light on a dark-mode device never sees a flash of the wrong one.
- * Has to be a blocking inline script; anything deferred paints first.
+ * picked dark stays in dark on their next visit rather than seeing a
+ * flash of the site's own light default. Has to be a blocking inline
+ * script; anything deferred paints first. Also corrects the mobile
+ * browser-chrome colour to match, since that meta tag has no CSS
+ * equivalent of data-theme to follow on its own.
  */
-const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}`;
+const themeScript = `try{var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content","#14171a")}}catch(e){}`;
 
 const publicSans = Public_Sans({
   subsets: ['latin'],
@@ -88,12 +91,16 @@ export const metadata: Metadata = {
   },
 };
 
-/** Tints the mobile browser chrome to match the page it is framing. */
+/**
+ * Tints the mobile browser chrome to match the page it is framing. A
+ * single static colour, not a media-query pair: the page itself starts
+ * light unconditionally regardless of OS setting, so a media query tied
+ * to prefers-color-scheme would mismatch the page on a dark-mode phone.
+ * themeScript corrects this to the dark colour when a saved choice
+ * calls for it, before first paint.
+ */
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f7f5ef' },
-    { media: '(prefers-color-scheme: dark)', color: '#14171a' },
-  ],
+  themeColor: '#f7f5ef',
 };
 
 export default function RootLayout({

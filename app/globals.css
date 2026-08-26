@@ -29,22 +29,12 @@
   --gutter: clamp(18px, 5vw, 40px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --bg: #14171a;
-    --surface: #1b1f22;
-    --surface-alt: #20252a;
-    --border: #2b3136;
-    --ink: #eceeec;
-    --ink-soft: #9ba3a0;
-    --accent: #83a9ff;
-    --accent-contrast: #0e1520;
-    --icon-bg: #242a2e;
-    --icon-ink: #eceeec;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 26px -14px rgba(0, 0, 0, 0.6);
-  }
-}
-
+/*
+ * No @media (prefers-color-scheme: dark) block here. The site starts
+ * in light mode unconditionally, regardless of the visitor's OS
+ * setting; dark only applies once someone explicitly picks it via the
+ * toggle below, and that choice is what persists after that.
+ */
 :root[data-theme='dark'] {
   --bg: #14171a;
   --surface: #1b1f22;

@@ -5,13 +5,6 @@
   --c: var(--cat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) .topicCard,
-  :root:not([data-theme='light']) .result {
-    --c: var(--cat-dark);
-  }
-}
-
 :root[data-theme='dark'] .topicCard,
 :root[data-theme='dark'] .result {
   --c: var(--cat-dark);

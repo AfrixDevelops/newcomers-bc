@@ -6,6 +6,17 @@ import { currentLocale } from '@/lib/i18n/config';
 import { dictionaries } from '@/lib/i18n/dictionaries';
 import styles from './ThemeToggle.module.css';
 
+/**
+ * The mobile browser-chrome colour has no CSS equivalent of data-theme,
+ * so it can't just follow the token system. It is set once for the
+ * light default and only needs correcting here, on an explicit choice.
+ */
+function updateThemeColor(theme: 'light' | 'dark') {
+  document
+    .querySelector('meta[name="theme-color"]')
+    ?.setAttribute('content', theme === 'dark' ? '#14171a' : '#f7f5ef');
+}
+
 export function ThemeToggle() {
   /** See BackToTop: rendered outside the [locale] tree, so read the URL. */
   const locale = currentLocale(usePathname() ?? '/');
@@ -14,19 +25,12 @@ export function ThemeToggle() {
 
   function toggle() {
     const root = document.documentElement;
-    const explicit = root.getAttribute('data-theme');
-
-    let next: 'light' | 'dark';
-    if (explicit === 'dark') {
-      next = 'light';
-    } else if (explicit === 'light') {
-      next = 'dark';
-    } else {
-      // No choice made yet, so flip away from whatever the OS is doing.
-      next = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
-    }
+    // No third OS-driven state to consider: the page is light unless
+    // data-theme='dark' says otherwise, so that is the only check.
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
 
     root.setAttribute('data-theme', next);
+    updateThemeColor(next);
     try {
       localStorage.setItem('theme', next);
     } catch {
