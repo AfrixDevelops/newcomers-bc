@@ -13,19 +13,46 @@ import styles from './Home.module.css';
 
 const MAX_RESULTS = 30;
 
-const searchIndex = resources.map((r) => ({
-  resource: r,
-  haystack: `${r.label} ${r.text} ${r.org ?? ''}`.toLowerCase(),
-  category: categories.find((c) => c.slug === r.category),
-}));
+/**
+ * Indexes each resource under its translated category words as well as
+ * its own English text.
+ *
+ * Without this the search is English-only while the placeholder invites
+ * the opposite: the Spanish page says "Busca vivienda, empleo, salud",
+ * and every one of those words returned nothing, which reads as a
+ * broken site rather than as a scope decision. Folding the translated
+ * category title, blurb and subtitle into the haystack means searching
+ * "vivienda" surfaces the housing resources. Their descriptions are
+ * still English, which the footer note already explains.
+ */
+function buildSearchIndex(dict: Dictionary) {
+  return resources.map((r) => {
+    const text = dict.categories[r.category];
+    return {
+      resource: r,
+      category: categories.find((c) => c.slug === r.category),
+      haystack: (
+        `${r.label} ${r.text} ${r.org ?? ''} ` +
+        `${text.title} ${text.shortTitle} ${text.blurb} ${text.subtitle}`
+      ).toLowerCase(),
+    };
+  });
+}
 
 function catVars(c: Category) {
   return { '--cat': c.color, '--cat-dark': c.colorDark } as React.CSSProperties;
 }
 
-/** Fills the one {token} a template string carries. */
+/**
+ * Fills the one {token} a template string carries.
+ *
+ * The replacement is a function on purpose: passing the value directly
+ * would let String.replace interpret "$&", "$`" and "$'" inside a
+ * search term as replacement patterns, echoing parts of the template
+ * back into the message.
+ */
 function fill(template: string, token: string, value: string) {
-  return template.replace(token, value);
+  return template.replace(token, () => value);
 }
 
 function TopicCard({
@@ -63,11 +90,14 @@ export function LocaleHome({ dict, locale }: { dict: Dictionary; locale: Locale 
   const [query, setQuery] = useState('');
   const trimmed = query.trim();
 
+  /** Rebuilt per locale, since the haystack carries translated words. */
+  const searchIndex = useMemo(() => buildSearchIndex(dict), [dict]);
+
   const matches = useMemo(() => {
     if (!trimmed) return [];
     const q = trimmed.toLowerCase();
     return searchIndex.filter((e) => e.haystack.includes(q)).slice(0, MAX_RESULTS);
-  }, [trimmed]);
+  }, [trimmed, searchIndex]);
 
   const searching = trimmed.length > 0;
   const countLabel = matches.length === 1 ? dict.home.resultsFoundOne : dict.home.resultsFoundOther;
