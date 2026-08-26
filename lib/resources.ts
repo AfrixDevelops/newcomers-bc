@@ -39,8 +39,8 @@ export const resources: Resource[] = [
     "type": "Tip",
     "text": "Dial 2-1-1, free, in 150+ languages, to find any local service near your postal code, from ESL classes to emergency shelter.",
     "org": "BC211",
-    "domain": "bc211.ca",
-    "url": "https://bc211.ca"
+    "domain": "bc.211.ca",
+    "url": "https://bc.211.ca"
   },
   {
     "category": "settlement",
@@ -49,7 +49,7 @@ export const resources: Resource[] = [
     "text": "Once you're settled, look into your Permanent Resident card renewal timeline. It's easy to forget until you need to travel.",
     "org": "IRCC - PR Card",
     "domain": "canada.ca",
-    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/pr-card.html"
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/permanent-residents.html"
   },
   {
     "category": "settlement",
@@ -58,7 +58,7 @@ export const resources: Resource[] = [
     "text": "Your BC Services Card is your main provincial ID and health card. Apply as soon as your address is confirmed.",
     "org": "Province of BC - BC Services Card",
     "domain": "gov.bc.ca",
-    "url": "https://www.gov.bc.ca/bcservicescard"
+    "url": "https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
   },
   {
     "category": "settlement",
@@ -103,7 +103,7 @@ export const resources: Resource[] = [
     "text": "IRCC's national settlement page links to free programs that help you find housing, work, and community right after you land.",
     "org": "IRCC - Community Connections",
     "domain": "canada.ca",
-    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants.html"
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada.html"
   },
   {
     "category": "settlement",
@@ -173,9 +173,9 @@ export const resources: Resource[] = [
     "label": "Settlement",
     "type": "Next step",
     "text": "Volunteering is a low-pressure way to meet people, practise English, and start building a Canadian reference.",
-    "org": "GoVolunteer",
-    "domain": "govolunteer.ca",
-    "url": "https://www.govolunteer.ca"
+    "org": "VolunteerConnector",
+    "domain": "volunteerconnector.org",
+    "url": "https://www.volunteerconnector.org"
   },
   {
     "category": "language",
@@ -184,7 +184,7 @@ export const resources: Resource[] = [
     "text": "Sign up for free LINC classes (Language Instruction for Newcomers to Canada). Childcare and transit help are often included.",
     "org": "IRCC - LINC Program",
     "domain": "canada.ca",
-    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/new-life-canada/language-classes.html"
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/language-skills/classes.html"
   },
   {
     "category": "language",
@@ -299,9 +299,9 @@ export const resources: Resource[] = [
     "label": "Employment",
     "type": "Next step",
     "text": "Check whether your profession is regulated in BC, like nursing or engineering. Regulated roles need licensing before you can work in them.",
-    "org": "WorkBC - Immigrate to BC",
+    "org": "WorkBC - People New to BC",
     "domain": "workbc.ca",
-    "url": "https://www.workbc.ca/immigrate-to-bc"
+    "url": "https://www.workbc.ca/plan-career/resources/people-new-bc"
   },
   {
     "category": "employment",
@@ -482,8 +482,8 @@ export const resources: Resource[] = [
     "type": "Tip",
     "text": "Short on groceries some weeks? Food banks are free, no-judgment, and open to anyone who needs them. Find your nearest one.",
     "org": "BC211 - Food Bank Directory",
-    "domain": "bc211.ca",
-    "url": "https://bc211.ca"
+    "domain": "bc.211.ca",
+    "url": "https://bc.211.ca"
   },
   {
     "category": "housing",
@@ -510,7 +510,7 @@ export const resources: Resource[] = [
     "text": "IRCC's overview of housing options and tenant protections that apply no matter which province you land in.",
     "org": "IRCC - Housing Overview",
     "domain": "canada.ca",
-    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants.html"
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada.html"
   },
   {
     "category": "housing",
@@ -572,8 +572,8 @@ export const resources: Resource[] = [
     "type": "Tip",
     "text": "Call 2-1-1 to find emergency shelter, transition housing, or short-term help paying rent.",
     "org": "BC211 - Housing Help",
-    "domain": "bc211.ca",
-    "url": "https://bc211.ca"
+    "domain": "bc.211.ca",
+    "url": "https://bc.211.ca"
   },
   {
     "category": "housing",
@@ -690,7 +690,7 @@ export const resources: Resource[] = [
     "text": "Free legal advocacy for newcomers navigating immigration, tenancy, or human rights issues.",
     "org": "MOSAIC - Legal Advocacy Program",
     "domain": "mosaicbc.org",
-    "url": "https://www.mosaicbc.org"
+    "url": "https://mosaicbc.org"
   },
   {
     "category": "legal",
@@ -727,7 +727,7 @@ export const resources: Resource[] = [
     "text": "Join a free newcomer social group. Settlement agencies run cultural meetups, mentorship, and family programs year-round.",
     "org": "ISSofBC - Newcomer Programs",
     "domain": "issbc.org",
-    "url": "https://www.issbc.org"
+    "url": "https://issbc.org"
   },
   {
     "category": "social",
@@ -736,16 +736,16 @@ export const resources: Resource[] = [
     "text": "Your local community centre offers low-cost drop-in programs: fitness classes, parent-and-tot groups, and seniors' circles.",
     "org": "Vancouver Parks & Recreation",
     "domain": "vancouver.ca",
-    "url": "https://vancouver.ca/parks-recreation-culture"
+    "url": "https://vancouver.ca/parks-recreation-culture/parks-and-recreation.aspx"
   },
   {
     "category": "social",
     "label": "Social",
     "type": "Next step",
     "text": "Volunteering is one of the fastest ways to make friends, practise English, and gain a Canadian reference for your resume.",
-    "org": "GoVolunteer",
-    "domain": "govolunteer.ca",
-    "url": "https://www.govolunteer.ca"
+    "org": "VolunteerConnector",
+    "domain": "volunteerconnector.org",
+    "url": "https://www.volunteerconnector.org"
   },
   {
     "category": "social",
@@ -754,7 +754,7 @@ export const resources: Resource[] = [
     "text": "Most municipalities offer discounted recreation passes for newcomers and low-income households. Ask at your local community centre.",
     "org": "Vancouver Parks & Recreation",
     "domain": "vancouver.ca",
-    "url": "https://vancouver.ca/parks-recreation-culture"
+    "url": "https://vancouver.ca/parks-recreation-culture/parks-and-recreation.aspx"
   },
   {
     "category": "social",
@@ -824,9 +824,9 @@ export const resources: Resource[] = [
     "label": "Social",
     "type": "Next step",
     "text": "Long-term volunteering builds a real network over time, not just a one-off event.",
-    "org": "GoVolunteer - Ongoing Roles",
-    "domain": "govolunteer.ca",
-    "url": "https://www.govolunteer.ca"
+    "org": "VolunteerConnector - Ongoing Roles",
+    "domain": "volunteerconnector.org",
+    "url": "https://www.volunteerconnector.org"
   },
   {
     "category": "mental-health",
@@ -835,7 +835,7 @@ export const resources: Resource[] = [
     "text": "Culture shock and settlement stress are normal, not a sign you're failing. Most newcomers feel it in the first year.",
     "org": "ISSofBC - Counselling Services",
     "domain": "issbc.org",
-    "url": "https://www.issbc.org"
+    "url": "https://issbc.org"
   },
   {
     "category": "mental-health",
@@ -853,7 +853,7 @@ export const resources: Resource[] = [
     "text": "Ask your settlement worker about free multilingual counselling: many agencies offer support in your first language.",
     "org": "MOSAIC BC",
     "domain": "mosaicbc.org",
-    "url": "https://www.mosaicbc.org"
+    "url": "https://mosaicbc.org"
   },
   {
     "category": "mental-health",
@@ -888,8 +888,8 @@ export const resources: Resource[] = [
     "type": "Tip",
     "text": "The province's directory of mental health and substance use services, searchable by region.",
     "org": "Province of BC - Mental Health Supports",
-    "domain": "gov.bc.ca",
-    "url": "https://www2.gov.bc.ca/gov/content/mental-health-support-in-bc"
+    "domain": "helpstartshere.gov.bc.ca",
+    "url": "https://helpstartshere.gov.bc.ca"
   },
   {
     "category": "mental-health",
@@ -961,7 +961,7 @@ export const resources: Resource[] = [
     "text": "Mental health and settlement support extended to temporary residents, not just permanent residents.",
     "org": "MOSAIC - Support for Temporary Residents",
     "domain": "mosaicbc.org",
-    "url": "https://www.mosaicbc.org"
+    "url": "https://mosaicbc.org"
   },
   {
     "category": "financial",
@@ -1168,7 +1168,7 @@ export const resources: Resource[] = [
     "text": "BC sets a province-wide minimum wage and workplace safety standards enforced by WorkSafeBC.",
     "org": "WorkSafeBC",
     "domain": "worksafebc.com",
-    "url": "https://www.worksafebc.com"
+    "url": "https://www.worksafebc.com/en"
   },
   {
     "category": "working-holiday",
@@ -1186,7 +1186,7 @@ export const resources: Resource[] = [
     "text": "General newcomer settlement support extends to temporary residents on IEC permits too.",
     "org": "MOSAIC - Support for Working Holiday Makers",
     "domain": "mosaicbc.org",
-    "url": "https://www.mosaicbc.org"
+    "url": "https://mosaicbc.org"
   },
   {
     "category": "working-holiday",
@@ -1342,7 +1342,7 @@ export const resources: Resource[] = [
     "text": "No family doctor yet? Join the Health Connect Registry to be matched with one taking new patients in your area.",
     "org": "HealthLink BC - Health Connect Registry",
     "domain": "healthlinkbc.ca",
-    "url": "https://www.healthlinkbc.ca/health-connect-registry"
+    "url": "https://www.healthlinkbc.ca/find-care/health-connect-registry"
   },
   {
     "category": "healthcare",
@@ -1387,16 +1387,16 @@ export const resources: Resource[] = [
     "text": "You can request a free interpreter for medical appointments. You do not have to bring a family member to translate.",
     "org": "PHSA Provincial Language Service",
     "domain": "phsa.ca",
-    "url": "https://www.phsa.ca/our-services/programs-services/provincial-language-service"
+    "url": "https://www.phsa.ca/our-services/programs-services/provincial-language-services"
   },
   {
     "category": "healthcare",
     "label": "Healthcare",
     "type": "Action",
     "text": "Routine vaccines for children and adults are free in BC. Book through your local health unit or a pharmacy.",
-    "org": "ImmunizeBC",
-    "domain": "immunizebc.ca",
-    "url": "https://immunizebc.ca/"
+    "org": "HealthLink BC - Immunizations",
+    "domain": "healthlinkbc.ca",
+    "url": "https://www.healthlinkbc.ca/health-library/immunizations"
   },
   {
     "category": "healthcare",
@@ -1405,7 +1405,7 @@ export const resources: Resource[] = [
     "text": "Dental care is not covered by MSP. Dental schools and community clinics offer treatment at reduced rates.",
     "org": "BC Dental Association",
     "domain": "bcdental.org",
-    "url": "https://www.bcdental.org/"
+    "url": "https://bcdental.org"
   },
   {
     "category": "healthcare",
@@ -1414,7 +1414,7 @@ export const resources: Resource[] = [
     "text": "Search for clinics, labs, hospitals, and specialists near you by postal code.",
     "org": "HealthLink BC - Find Services",
     "domain": "healthlinkbc.ca",
-    "url": "https://www.healthlinkbc.ca/health-services/find-health-services"
+    "url": "https://www.healthlinkbc.ca/search?kw=find+health+services"
   },
   {
     "category": "healthcare",
@@ -1548,8 +1548,8 @@ export const resources: Resource[] = [
     "type": "Tip",
     "text": "Metro Vancouver has a large protected bike network, and bikes travel free on SkyTrain and SeaBus.",
     "org": "HUB Cycling",
-    "domain": "bikehub.ca",
-    "url": "https://bikehub.ca/"
+    "domain": "hubcycling.ca",
+    "url": "https://hubcycling.ca"
   },
   {
     "category": "transportation",
@@ -1594,7 +1594,7 @@ export const resources: Resource[] = [
     "text": "If you do not drive, your BC Services Card doubles as government-issued photo ID.",
     "org": "Province of BC - BC Services Card",
     "domain": "gov.bc.ca",
-    "url": "https://www.gov.bc.ca/bcservicescard"
+    "url": "https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
   }
 ];
 
