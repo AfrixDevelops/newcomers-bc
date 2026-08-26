@@ -123,6 +123,8 @@ function LocaleHomePage({ locale }: { locale: Locale }) {
         aboutLinksLabel={dict.footer.aboutLinksLabel}
         aboutLinks={dict.footer.aboutLinks}
         translationNote={dict.footer.translationNote}
+        supportLabel={dict.footer.supportLabel}
+        opensNewTabLabel={dict.common.opensNewTab}
       />
     </main>
   );

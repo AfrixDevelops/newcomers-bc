@@ -23,9 +23,31 @@
 }
 
 .sign {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
   margin-top: 18px;
   font-size: 0.8rem;
   color: var(--ink-soft);
+}
+
+.dot {
+  opacity: 0.5;
+}
+
+/* Quietly styled on purpose: same weight as the "Newcomers BC" sign
+   line next to it, not a call-to-action button competing with the
+   actual resources above it. */
+.support {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--ink-soft);
+}
+
+.support:hover {
+  color: var(--accent);
 }
 
 /* Only rendered on translated pages: flags that the tips and their

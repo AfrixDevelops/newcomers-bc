@@ -60,6 +60,7 @@ export interface Dictionary {
     aboutLinksLabel: string;
     aboutLinks: string;
     translationNote: string;
+    supportLabel: string;
   };
   categories: Record<CategorySlug, CategoryText>;
 }
@@ -114,6 +115,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         'Cada recurso enlaza a una organización real de BC o federal, verificada en el sitio actual de cada organización. Las páginas del gobierno se reestructuran de vez en cuando, así que si un enlace deja de funcionar, busca el nombre de la organización directamente.',
       translationNote:
         'El menú y los títulos de esta página están traducidos. Los consejos y los sitios enlazados permanecen en inglés.',
+      supportLabel: 'Apoya este proyecto',
     },
     categories: {
       settlement: {
@@ -244,6 +246,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       aboutLinks:
         '掲載しているリソースは、すべて実在するBC州または連邦政府機関のもので、各団体の最新サイトを確認したうえで掲載しています。政府のウェブページは随時再編成されるため、リンク切れの場合は団体名で直接検索してください。',
       translationNote: 'このページのメニューや見出しは翻訳されています。ヒントの内容やリンク先のサイトは英語のままです。',
+      supportLabel: 'このプロジェクトを支援する',
     },
     categories: {
       settlement: {
@@ -367,6 +370,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       aboutLinks:
         '모든 자료는 실제 BC주 또는 연방 정부 기관으로 연결되며, 각 기관의 현재 웹사이트를 기준으로 확인되었습니다. 정부 웹페이지는 종종 개편되므로, 링크가 끊어졌다면 해당 기관의 이름으로 직접 검색해 보세요.',
       translationNote: '이 페이지의 메뉴와 제목은 번역되어 있습니다. 팁 내용과 연결된 사이트는 영어로 제공됩니다.',
+      supportLabel: '이 프로젝트 후원하기',
     },
     categories: {
       settlement: {
@@ -491,6 +495,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "ਹਰੇਕ ਸਰੋਤ ਇੱਕ ਅਸਲੀ BC ਜਾਂ ਸੰਘੀ ਸੰਸਥਾ ਵੱਲ ਜਾਂਦਾ ਹੈ, ਜਿਸਦੀ ਪੁਸ਼ਟੀ ਹਰੇਕ ਸੰਸਥਾ ਦੀ ਮੌਜੂਦਾ ਸਾਈਟ ਨਾਲ ਕੀਤੀ ਗਈ ਹੈ। ਸਰਕਾਰੀ ਪੰਨੇ ਸਮੇਂ-ਸਮੇਂ 'ਤੇ ਬਦਲੇ ਜਾਂਦੇ ਹਨ, ਇਸ ਲਈ ਜੇ ਕੋਈ ਲਿੰਕ ਕੰਮ ਨਾ ਕਰੇ, ਤਾਂ ਸੰਸਥਾ ਦਾ ਨਾਂ ਸਿੱਧਾ ਖੋਜੋ।",
       translationNote:
         'ਇਸ ਸਫ਼ੇ ਦੇ ਮੀਨੂ ਅਤੇ ਸਿਰਲੇਖ ਅਨੁਵਾਦ ਕੀਤੇ ਗਏ ਹਨ। ਸੁਝਾਵਾਂ ਦੀ ਸਮੱਗਰੀ ਅਤੇ ਜੁੜੀਆਂ ਸਾਈਟਾਂ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਹੀ ਰਹਿੰਦੀਆਂ ਹਨ।',
+      supportLabel: 'ਇਸ ਪ੍ਰੋਜੈਕਟ ਦੀ ਹਮਾਇਤ ਕਰੋ',
     },
     categories: {
       settlement: {
@@ -616,6 +621,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         'Bawat mapagkukunan ay naka-link sa tunay na organisasyon ng BC o pederal, na na-verify laban sa kasalukuyang site ng bawat organisasyon. Paminsan-minsan ay nire-restructure ang mga pahina ng gobyerno, kaya kung may sirang link, hanapin na lang ang pangalan ng organisasyon nang direkta.',
       translationNote:
         'Isinalin ang mga menu at heading ng pahinang ito. Ang mga tip mismo at ang mga site na naka-link ay nananatiling nasa Ingles.',
+      supportLabel: 'Suportahan ang proyektong ito',
     },
     categories: {
       settlement: {
@@ -744,6 +750,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       aboutLinks:
         '每项资源均链接到真实的BC省或联邦机构，并已对照该机构现有网站进行核实。政府网页会不定期改版，如链接失效，请直接搜索该机构名称查找。',
       translationNote: '本页面的菜单和标题已翻译。提示内容及所链接的网站仍为英文。',
+      supportLabel: '支持本项目',
     },
     categories: {
       settlement: {
@@ -867,6 +874,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       aboutLinks:
         '每項資源均連結至真實的卑詩省或聯邦機構，並已對照該機構現有網站核實。政府網頁不時會重新整理架構，如連結失效，請直接搜尋該機構名稱查找。',
       translationNote: '此頁面的選單與標題已翻譯。提示內容及所連結的網站仍為英文。',
+      supportLabel: '支持本專案',
     },
     categories: {
       settlement: {

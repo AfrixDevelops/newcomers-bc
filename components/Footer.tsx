@@ -1,3 +1,4 @@
+import { Coffee } from '@phosphor-icons/react/dist/ssr';
 import styles from './Footer.module.css';
 
 /**
@@ -18,12 +19,16 @@ export function Footer({
     "from time to time, so if a link goes stale, search the organization’s name " +
     'directly.',
   translationNote,
+  supportLabel = 'Support this project',
+  opensNewTabLabel = '(opens in a new tab)',
 }: {
   disclaimerLabel?: string;
   disclaimer?: string;
   aboutLinksLabel?: string;
   aboutLinks?: string;
   translationNote?: string;
+  supportLabel?: string;
+  opensNewTabLabel?: string;
 }) {
   return (
     <footer className={styles.footer}>
@@ -36,7 +41,22 @@ export function Footer({
         </p>
       </div>
       {translationNote && <p className={styles.note}>{translationNote}</p>}
-      <p className={styles.sign}>Newcomers BC</p>
+      <p className={styles.sign}>
+        Newcomers BC
+        <span className={styles.dot} aria-hidden>
+          ·
+        </span>
+        <a
+          href="https://buymeacoffee.com/afrix"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.support}
+        >
+          <Coffee size={14} weight="bold" aria-hidden />
+          {supportLabel}
+          <span className="sr-only">{opensNewTabLabel}</span>
+        </a>
+      </p>
     </footer>
   );
 }
