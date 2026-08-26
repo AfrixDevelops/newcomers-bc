@@ -405,6 +405,42 @@ export const resources: Resource[] = [
   {
     "category": "employment",
     "label": "Employment",
+    "type": "Tip",
+    "text": "Employment Insurance (EI) pays income support if you lose your job. It's based on insurable hours worked in Canada, so newcomers usually need some Canadian work history before qualifying.",
+    "org": "Service Canada - EI Eligibility",
+    "domain": "canada.ca",
+    "url": "https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/eligibility.html"
+  },
+  {
+    "category": "employment",
+    "label": "Employment",
+    "type": "Action",
+    "text": "If you lose your job, apply for EI within 4 weeks of your last day, even if you're still waiting on paperwork. Waiting longer can cost you benefits.",
+    "org": "Service Canada - Apply for EI",
+    "domain": "canada.ca",
+    "url": "https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/apply.html"
+  },
+  {
+    "category": "employment",
+    "label": "Employment",
+    "type": "Tip",
+    "text": "Ask your employer for a Record of Employment (ROE) when a job ends. Service Canada uses it to calculate your EI benefit, and most employers file it electronically.",
+    "org": "Service Canada - Record of Employment",
+    "domain": "canada.ca",
+    "url": "https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe.html"
+  },
+  {
+    "category": "employment",
+    "label": "Employment",
+    "type": "Next step",
+    "text": "Set up a My Service Canada Account to track your EI application status, view payments, and access your Record of Employment online.",
+    "org": "Service Canada - My Account (EI)",
+    "domain": "canada.ca",
+    "url": "https://www.canada.ca/en/employment-social-development/services/my-account/ei.html"
+  },
+  {
+    "category": "employment",
+    "label": "Employment",
     "type": "Community",
     "text": "Newcomers often share real resume and job-search experiences, useful alongside, not instead of, official advice.",
     "org": "r/canadaexpats",
