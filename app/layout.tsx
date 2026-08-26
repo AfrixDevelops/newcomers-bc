@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Archivo, Public_Sans } from 'next/font/google';
+import { Analytics } from '@/components/Analytics';
 import { BackToTop } from '@/components/BackToTop';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -118,6 +119,7 @@ export default function RootLayout({
         <BackToTop />
         <ThemeToggle />
         <LanguageSwitcher />
+        <Analytics />
       </body>
     </html>
   );
