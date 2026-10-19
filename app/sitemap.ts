@@ -37,5 +37,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
   });
 
-  return [...home, ...categoryPages];
+  // English only, so no hreflang alternates for it.
+  const privacy: MetadataRoute.Sitemap = [
+    { url: absoluteUrl('privacy'), changeFrequency: 'yearly', priority: 0.3 },
+  ];
+
+  return [...home, ...categoryPages, ...privacy];
 }

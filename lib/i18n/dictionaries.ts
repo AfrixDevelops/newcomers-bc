@@ -53,6 +53,10 @@ export interface Dictionary {
     darkMode: string;
     backToTopLabel: string;
     opensNewTab: string;
+    privacy: string;
+    consentMessage: string;
+    consentAccept: string;
+    consentDecline: string;
   };
   footer: {
     disclaimerLabel: string;
@@ -105,6 +109,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       darkMode: 'Cambiar a modo oscuro',
       backToTopLabel: 'Volver arriba',
       opensNewTab: '(se abre en una pestaña nueva)',
+      privacy: 'Privacidad',
+      consentMessage:
+        'Usamos cookies de análisis para entender cómo se usa el sitio. Son opcionales y el sitio funciona igual sin ellas.',
+      consentAccept: 'Aceptar',
+      consentDecline: 'Rechazar',
     },
     footer: {
       disclaimerLabel: 'Aviso:',
@@ -237,6 +246,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       darkMode: 'ダークモードに切り替え',
       backToTopLabel: 'ページの先頭に戻る',
       opensNewTab: '(新しいタブで開きます)',
+      privacy: 'プライバシー',
+      consentMessage:
+        'サイトの利用状況を把握するために分析用Cookieを使用しています。任意であり、使用しなくてもサイトは同じように機能します。',
+      consentAccept: '同意する',
+      consentDecline: '拒否する',
     },
     footer: {
       disclaimerLabel: '免責事項:',
@@ -361,6 +375,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       darkMode: '다크 모드로 전환',
       backToTopLabel: '맨 위로 이동',
       opensNewTab: '(새 탭에서 열림)',
+      privacy: '개인정보',
+      consentMessage:
+        '사이트 이용 현황을 파악하기 위해 분석 쿠키를 사용합니다. 선택 사항이며, 사용하지 않아도 사이트는 동일하게 작동합니다.',
+      consentAccept: '동의',
+      consentDecline: '거부',
     },
     footer: {
       disclaimerLabel: '안내:',
@@ -485,6 +504,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       darkMode: 'ਡਾਰਕ ਮੋਡ ਵਿੱਚ ਬਦਲੋ',
       backToTopLabel: 'ਉੱਪਰ ਵਾਪਸ ਜਾਓ',
       opensNewTab: '(ਨਵੀਂ ਟੈਬ ਵਿੱਚ ਖੁੱਲ੍ਹਦਾ ਹੈ)',
+      privacy: 'ਪਰਦੇਦਾਰੀ',
+      consentMessage:
+        'ਅਸੀਂ ਇਹ ਸਮਝਣ ਲਈ ਵਿਸ਼ਲੇਸ਼ਣ ਕੂਕੀਜ਼ ਵਰਤਦੇ ਹਾਂ ਕਿ ਸਾਈਟ ਕਿਵੇਂ ਵਰਤੀ ਜਾਂਦੀ ਹੈ। ਇਹ ਚੋਣਵੇਂ ਹਨ ਅਤੇ ਇਹਨਾਂ ਤੋਂ ਬਿਨਾਂ ਵੀ ਸਾਈਟ ਉਸੇ ਤਰ੍ਹਾਂ ਕੰਮ ਕਰਦੀ ਹੈ।',
+      consentAccept: 'ਸਵੀਕਾਰ ਕਰੋ',
+      consentDecline: 'ਇਨਕਾਰ ਕਰੋ',
     },
     footer: {
       disclaimerLabel: 'ਬੇਦਾਅਵਾ:',
@@ -611,6 +635,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       darkMode: 'Lumipat sa dark mode',
       backToTopLabel: 'Bumalik sa itaas',
       opensNewTab: '(magbubukas sa bagong tab)',
+      privacy: 'Pagkapribado',
+      consentMessage:
+        'Gumagamit kami ng analytics cookies para maunawaan kung paano ginagamit ang site. Opsyonal ito at gumagana pa rin ang site kahit wala ito.',
+      consentAccept: 'Tanggapin',
+      consentDecline: 'Tanggihan',
     },
     footer: {
       disclaimerLabel: 'Paalala:',
@@ -741,6 +770,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       darkMode: '切换到深色模式',
       backToTopLabel: '返回顶部',
       opensNewTab: '(在新标签页中打开)',
+      privacy: '隐私政策',
+      consentMessage:
+        '我们使用分析类 Cookie 来了解网站的使用情况。这是可选的，不启用也不影响网站的正常使用。',
+      consentAccept: '接受',
+      consentDecline: '拒绝',
     },
     footer: {
       disclaimerLabel: '免责声明：',
@@ -865,6 +899,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       darkMode: '切換至深色模式',
       backToTopLabel: '返回頂部',
       opensNewTab: '（在新分頁開啟）',
+      privacy: '私隱政策',
+      consentMessage:
+        '我們使用分析類 Cookie 來了解網站的使用情況。這是可選的，不啟用亦不影響網站的正常使用。',
+      consentAccept: '接受',
+      consentDecline: '拒絕',
     },
     footer: {
       disclaimerLabel: '免責聲明：',

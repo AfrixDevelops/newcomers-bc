@@ -1,0 +1,88 @@
+.bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Above the floating controls, which it covers while shown. It is
+     dismissed once and never seen again, so the overlap is brief. */
+  z-index: 30;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  padding: 14px clamp(16px, 4vw, 32px);
+
+  font-size: 0.85rem;
+  color: var(--ink);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -6px 24px -18px rgba(0, 0, 0, 0.5);
+}
+
+.text {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.accept,
+.decline {
+  padding: 9px 18px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: var(--radius-control);
+  cursor: pointer;
+}
+
+.accept {
+  color: var(--resource-btn-text);
+  background: var(--resource-btn-bg);
+  border: 1px solid var(--resource-btn-bg);
+}
+
+.decline {
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--border);
+}
+
+.decline:hover {
+  border-color: var(--ink-soft);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .accept,
+  .decline {
+    transition: border-color 0.15s ease, opacity 0.15s ease;
+  }
+  .accept:hover {
+    opacity: 0.9;
+  }
+}
+
+@media (max-width: 560px) {
+  .bar {
+    justify-content: flex-start;
+  }
+  .actions {
+    width: 100%;
+  }
+  .accept,
+  .decline {
+    flex: 1;
+  }
+}

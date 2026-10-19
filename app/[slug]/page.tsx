@@ -124,6 +124,7 @@ function LocaleHomePage({ locale }: { locale: Locale }) {
         aboutLinks={dict.footer.aboutLinks}
         translationNote={dict.footer.translationNote}
         supportLabel={dict.footer.supportLabel}
+        privacyLabel={dict.common.privacy}
         opensNewTabLabel={dict.common.opensNewTab}
       />
     </main>

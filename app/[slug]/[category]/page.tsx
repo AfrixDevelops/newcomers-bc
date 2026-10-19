@@ -155,6 +155,7 @@ export default async function LocaleCategoryPage({ params }: { params: Promise<P
         aboutLinks={dict.footer.aboutLinks}
         translationNote={dict.footer.translationNote}
         supportLabel={dict.footer.supportLabel}
+        privacyLabel={dict.common.privacy}
         opensNewTabLabel={dict.common.opensNewTab}
       />
     </main>

@@ -2,10 +2,24 @@ import type { Metadata, Viewport } from 'next';
 import { Archivo, Public_Sans } from 'next/font/google';
 import { Analytics } from '@/components/Analytics';
 import { BackToTop } from '@/components/BackToTop';
+import { CookieConsent } from '@/components/CookieConsent';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { siteDescription, siteName, siteUrl } from '@/lib/site';
 import './globals.css';
+
+/**
+ * Google Consent Mode defaults, set before gtag.js can load. Analytics
+ * starts denied unless a previous visit stored an explicit yes, so no
+ * analytics cookie is written until someone opts in on the banner.
+ * Blocking and inline for the same reason as themeScript: the consent
+ * state has to be in dataLayer before any measurement is queued, and
+ * anything deferred would be too late.
+ *
+ * functionality_storage stays granted: that covers the theme preference,
+ * which is user-initiated and not tracking.
+ */
+const consentScript = `window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments)}window.gtag=gtag;var c="denied";try{if(localStorage.getItem("consent")==="granted")c="granted"}catch(e){}gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",personalization_storage:"denied",analytics_storage:c,functionality_storage:"granted",security_storage:"granted"});`;
 
 /**
  * Applies a saved theme choice before the browser paints, so someone who
@@ -112,6 +126,7 @@ export default function RootLayout({
   return (
     <html lang="en-CA" className={`${publicSans.variable} ${archivo.variable}`} suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: consentScript }} />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
@@ -120,6 +135,7 @@ export default function RootLayout({
         <ThemeToggle />
         <LanguageSwitcher />
         <Analytics />
+        <CookieConsent />
       </body>
     </html>
   );

@@ -22,6 +22,10 @@ declare global {
  * usage rather than erroring, which is the kind of bug that goes
  * unnoticed until someone asks why a popular page shows no traffic.
  *
+ * dataLayer and gtag are bootstrapped by the consent script in
+ * app/layout.tsx, which has to run first so Consent Mode defaults are
+ * in place before this loads. This file only configures and measures.
+ *
  * send_page_view is turned off in the init call below specifically so
  * this effect is the one place page views are ever sent, including the
  * first one (this effect also runs on mount): one path, not two
@@ -41,7 +45,7 @@ export function Analytics() {
     <>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
       <Script id="ga-init" strategy="afterInteractive">
-        {`window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','${GA_ID}',{send_page_view:false});`}
+        {`window.gtag('js',new Date());window.gtag('config','${GA_ID}',{send_page_view:false});`}
       </Script>
     </>
   );

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Coffee } from '@phosphor-icons/react/dist/ssr';
 import styles from './Footer.module.css';
 
@@ -20,6 +21,8 @@ export function Footer({
     'directly.',
   translationNote,
   supportLabel = 'Support this project',
+  privacyLabel = 'Privacy',
+  privacyHref = '/privacy',
   opensNewTabLabel = '(opens in a new tab)',
 }: {
   disclaimerLabel?: string;
@@ -28,6 +31,8 @@ export function Footer({
   aboutLinks?: string;
   translationNote?: string;
   supportLabel?: string;
+  privacyLabel?: string;
+  privacyHref?: string;
   opensNewTabLabel?: string;
 }) {
   return (
@@ -43,6 +48,12 @@ export function Footer({
       {translationNote && <p className={styles.note}>{translationNote}</p>}
       <p className={styles.sign}>
         Newcomers BC
+        <span className={styles.dot} aria-hidden>
+          ·
+        </span>
+        <Link href={privacyHref} className={styles.support}>
+          {privacyLabel}
+        </Link>
         <span className={styles.dot} aria-hidden>
           ·
         </span>
