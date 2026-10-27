@@ -461,6 +461,16 @@ export const resources: Resource[] = [
   {
     "category": "housing",
     "label": "Housing",
+    "type": "Community",
+    "text": "Check a rent increase notice against this year's limit, the 12-month rule, and the required notice period, all in plain language.",
+    "org": "Renterly",
+    "domain": "renterly.ca",
+    "url": "https://renterly.ca",
+    "note": "An independent tool, not an official source, and it carries a sponsored insurance offer. For anything binding, check with the Residential Tenancy Branch."
+  },
+  {
+    "category": "housing",
+    "label": "Housing",
     "type": "Tip",
     "text": "BC's Residential Tenancy Branch explains deposits, rent increases, and eviction rules in plain language. Know them before you sign.",
     "org": "Residential Tenancy Branch",
@@ -601,16 +611,6 @@ export const resources: Resource[] = [
     "org": "BC Non-Profit Housing Association",
     "domain": "bcnpha.ca",
     "url": "https://bcnpha.ca"
-  },
-  {
-    "category": "housing",
-    "label": "Housing",
-    "type": "Community",
-    "text": "Check a rent increase notice against this year's limit, the 12-month rule, and the required notice period, all in plain language.",
-    "org": "Renterly",
-    "domain": "renterly.ca",
-    "url": "https://renterly.ca",
-    "note": "An independent tool, not an official source, and it carries a sponsored insurance offer. For anything binding, check with the Residential Tenancy Branch."
   },
   {
     "category": "legal",
