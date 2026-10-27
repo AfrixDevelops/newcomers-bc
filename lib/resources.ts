@@ -603,6 +603,16 @@ export const resources: Resource[] = [
     "url": "https://bcnpha.ca"
   },
   {
+    "category": "housing",
+    "label": "Housing",
+    "type": "Community",
+    "text": "Check a rent increase notice against this year's limit, the 12-month rule, and the required notice period, all in plain language.",
+    "org": "Renterly",
+    "domain": "renterly.ca",
+    "url": "https://renterly.ca",
+    "note": "An independent tool, not an official source, and it carries a sponsored insurance offer. For anything binding, check with the Residential Tenancy Branch."
+  },
+  {
     "category": "legal",
     "label": "Legal",
     "type": "Tip",
