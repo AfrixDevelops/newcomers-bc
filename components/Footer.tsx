@@ -57,6 +57,19 @@ export function Footer({
         <span className={styles.dot} aria-hidden>
           ·
         </span>
+        {/* Proper noun, so no translated label is needed. */}
+        <a
+          href="https://renterly.ca"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.support}
+        >
+          Renterly
+          <span className="sr-only">{opensNewTabLabel}</span>
+        </a>
+        <span className={styles.dot} aria-hidden>
+          ·
+        </span>
         <a
           href="https://buymeacoffee.com/afrix"
           target="_blank"

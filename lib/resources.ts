@@ -466,7 +466,7 @@ export const resources: Resource[] = [
     "org": "Renterly",
     "domain": "renterly.ca",
     "url": "https://renterly.ca",
-    "note": "An independent tool, not an official source, and it carries a sponsored insurance offer. For anything binding, check with the Residential Tenancy Branch."
+    "note": "An independent tool, not an official source. For anything binding, check with the Residential Tenancy Branch."
   },
   {
     "category": "housing",
